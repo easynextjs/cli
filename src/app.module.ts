@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { BasicCommand } from './basic.command';
-import { LogService } from './log.service';
+import { commandModules } from './commands';
+import { LoggerModule } from './logger';
 
 @Module({
-  imports: [],
-  providers: [BasicCommand, LogService],
+  imports: [...commandModules, LoggerModule],
+  providers: [BasicCommand],
 })
 export class AppModule {}

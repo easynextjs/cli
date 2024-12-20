@@ -8,6 +8,9 @@
     "allowSyntheticDefaultImports": true,
     "target": "ES2021",
     "sourceMap": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
@@ -17,5 +20,8 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   }
 }

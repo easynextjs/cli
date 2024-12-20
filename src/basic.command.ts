@@ -1,5 +1,5 @@
 import { Command, CommandRunner, Option } from 'nest-commander';
-import { LogService } from './log.service';
+import { Logger } from './logger';
 
 interface BasicCommandOptions {
   string?: string;
@@ -9,7 +9,7 @@ interface BasicCommandOptions {
 
 @Command({ name: 'basic', description: 'A parameter parse' })
 export class BasicCommand extends CommandRunner {
-  constructor(private readonly logService: LogService) {
+  constructor(private readonly logger: Logger) {
     super();
   }
 
@@ -53,18 +53,18 @@ export class BasicCommand extends CommandRunner {
   }
 
   runWithString(param: string[], option: string): void {
-    this.logService.log({ param, string: option });
+    this.logger.info({ param, string: option });
   }
 
   runWithNumber(param: string[], option: number): void {
-    this.logService.log({ param, number: option });
+    this.logger.info({ param, number: option });
   }
 
   runWithBoolean(param: string[], option: boolean): void {
-    this.logService.log({ param, boolean: option });
+    this.logger.info({ param, boolean: option });
   }
 
   runWithNone(param: string[]): void {
-    this.logService.log({ param });
+    this.logger.info({ param });
   }
 }
