@@ -1,35 +1,41 @@
 # @easynextjs/cli
 
-## Project setup
+[![npm version](https://img.shields.io/npm/v/%40easynext%2Fcli)](https://www.npmjs.com/package/@easynext/cli)
+
+> Depends on Cursor, Vercel, shadcn-ui, Supabase, NextAuth
+
+Easy-to-Use CLI for Next.js
+
+## Getting Started
 
 ```bash
-$ pnpm install
+# Install the CLI globally
+$ npm install -g @easynext/cli
+$ yarn global add @easynext/cli
+$ pnpm add -g @easynext/cli
 ```
 
-## Compile and run the project
+## Commands
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+# Check tools installation
+$ easynext doctor
 ```
 
-## Run tests
+## Coming Soon
 
 ```bash
-# unit tests
-$ pnpm run test
+# Create a new project
+$ easynext create <project-name>
 
-# e2e tests
-$ pnpm run test:e2e
+# Set google auth
+$ easynext auth google|apple|kakao|naver
 
-# test coverage
-$ pnpm run test:cov
+# Init shadcn-ui
+$ easynext shadcn
+
+# Init supabase
+$ easynext supabase
 ```
 
 ## License
